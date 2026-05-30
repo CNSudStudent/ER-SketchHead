@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     //Game over Canvas
     [Header("Game OVer UI Canvas Object")]
     public GameObject gameOverCanvas;
+    [Header("position")]
+    public float position;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class GameController : MonoBehaviour
         //Spawn platforms randomly on the X axis and place them on the Y axis every 2.5
         Instantiate(platform, new Vector3(Random.value * 10 - 5f, pos, 0.5f), Quaternion.identity);
         pos += 2.5f;
+        pos += position;
     }
 
     public void GameOver()
